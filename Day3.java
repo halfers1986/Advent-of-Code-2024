@@ -126,7 +126,7 @@ public class Day3 {
         return cleanString.toString();
     }
 
-    // Read in file and store values (lines) in a list of arrays
+    // Read in file and store values (lines) in a String
     private static void getInput(String name) {
         // Read in file
         File file = new File("./Data Files/" + name + ".txt");
