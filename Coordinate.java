@@ -24,6 +24,10 @@ public class Coordinate {
         this.y = y;
     }
 
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
+
     public Coordinate[] getAdjacent() {
         Coordinate[] adjacent = new Coordinate[8];
         adjacent[0] = new Coordinate(x - 1, y - 1);
