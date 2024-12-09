@@ -36,7 +36,7 @@ public class Day8 {
                 for (Map.Entry<Coordinate, String> entry2 : coordinateMap.entrySet()) {
                     Coordinate c2 = entry2.getKey();
                     if (entry2.getValue().equals(value1) && !c1.equals(c2)) {
-                        List<Coordinate> line = calculateLine(c2, c1); // part 2
+                        List<Coordinate> line = calculateLine(c2, c1);
                         // Part 1
                         for (Coordinate c3 : line) {
                             if (!c3.equals(c1) && !c3.equals(c2)) {
@@ -63,11 +63,13 @@ public class Day8 {
 
     private static List<Coordinate> calculateLine(Coordinate c2, Coordinate c1) {
         List<Coordinate> line = new ArrayList<Coordinate>();
-        int dx = c2.getX() - c1.getX();
-        int dy = c2.getY() - c1.getY();
+        int dx = c2.getX() - c1.getX(); // difference in x
+        int dy = c2.getY() - c1.getY(); // difference in y
 
         Coordinate c = new Coordinate(c1.getX() - dx, c1.getY() - dy);
 
+        // From c1, iterate along the line in both directions until the line leaves the map
+        // to find all the points on the line
         while (coordinateMap.containsKey(c)) {
             if (!line.contains(c)) {
                 line.add(c);
